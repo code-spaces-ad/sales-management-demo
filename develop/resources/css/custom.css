@@ -1,0 +1,46 @@
+/**
+ * 修正用CSS
+ *
+ * @copyright © 2025 CodeSpaces
+ */
+
+/* 締処理画面のチェックボックスのズレ修正 */
+.custom-form-check {
+  position: relative;
+  display: block;
+  padding-left: 1.7rem;
+}
+
+.custom-table-area {
+  max-height: 320px;
+  overflow-y: auto;
+}
+
+.custom-table-fixed {
+  border-collapse: separate !important;
+  border-spacing: 0;
+}
+
+.custom-table-fixed th {
+  position: sticky;
+  top: 0;
+  z-index: 1;
+}
+
+.custom-table {
+  width: 100%;
+  margin-bottom: 1rem;
+  color: #212529;
+}
+
+.custom-table th,
+.custom-table td {
+  vertical-align: top;
+  border-top: 1px solid #dee2e6;
+}
+
+.custom-table .custom-thead-light th {
+  color: #495057;
+  background-color: #e9ecef;
+  border-color: #dee2e6;
+}

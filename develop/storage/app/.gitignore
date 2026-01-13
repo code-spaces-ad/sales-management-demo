@@ -1,0 +1,8 @@
+*
+!backup-temp/
+!excel/
+!excel/*.xlsx
+!public/
+!temp/
+!import/
+!.gitignore

@@ -1,0 +1,5 @@
+/.DS_Store
+/db/data
+/db/.DS_Store
+/nginx/.DS_Store
+.env

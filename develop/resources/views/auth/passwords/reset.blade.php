@@ -1,0 +1,113 @@
+{{-- @copyright © 2025 CodeSpaces --}}
+@extends('layouts.base')
+@extends('layouts.head')
+@extends('layouts.footer')
+
+@section('title', 'パスワードリセット | ' . config('app.name'))
+
+@section('content')
+    <div class="login-area col-md-12">
+        <div class="login-box ">
+            {{-- システムタイトル --}}
+            <div class="text-center" style="font-size: 2rem;">
+                <div>{{ config('app.company_name') }}</div>
+                <div>{{ config('app.name') }}</div>
+            </div>
+
+            <div class="row justify-content-center">
+                <div class="col-md-10">
+                    @if (session('status'))
+                        <div class="alert alert-success" role="alert">
+                            {{ session('status') }}
+                        </div>
+                    @endif
+
+                    <form method="POST" class="form-reset-password" action="{{ route('password.update') }}">
+                        @csrf
+                        <input type="hidden" name="token" value="{{ $token }}">
+
+                        {{-- メールアドレス --}}
+                        <div class="input-group mb-3">
+                            <div class="form-label-group w-100 mb-0">
+                                <input type="text" name="email" id="email"
+                                       value="{{ $email ?? old('email') }}"
+                                       class="{{ $errors->has('email') ? 'form-control is-invalid' : 'form-control' }}"
+                                       placeholder="メールアドレス" autofocus required>
+
+                                <label for="email">メールアドレス</label>
+                            </div>
+                            @error('email')
+                                <div class="invalid-feedback" role="alert">
+                                    <strong>{{ $message }}</strong>
+                                </div>
+                            @enderror
+                        </div>
+
+                        {{-- パスワード --}}
+                        <div class="input-group mb-3">
+                            <div class="form-label-group w-100 mb-0">
+                                <input type="password" name="password" id="password"
+                                       class="{{ $errors->has('password') ? 'form-control is-invalid' : 'form-control' }}"
+                                       placeholder="パスワード" required autocomplete="new-password">
+
+                                <label for="password">パスワード</label>
+                            </div>
+                            @error('password')
+                                <div class="invalid-feedback" role="alert">
+                                    <strong>{{ $message }}</strong>
+                                </div>
+                            @enderror
+                        </div>
+
+                        {{-- 確認用パスワード --}}
+                        <div class="input-group mb-3">
+                            <div class="form-label-group w-100 mb-0">
+                                <input type="password" name="password_confirmation" id="password-confirm"
+                                       class="{{ $errors->has('password') ? 'form-control is-invalid' : 'form-control' }}"
+                                       placeholder="確認用パスワード" required autocomplete="new-password">
+
+                                <label for="password-confirm">確認用パスワード</label>
+                            </div>
+                        </div>
+
+                        <div class="text-center">
+                            <button type="submit" class="btn btn-primary">
+                                {{ __('passwords.reset_password_button') }}
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <style type="text/css">
+        @media (min-width: 751px) {
+            .login-box {
+                padding: 2.5em 1em;
+                margin: auto;
+
+                width: 600px;
+                background: #FFF;
+                border-radius: 10px;
+            }
+        }
+
+        @media (max-width: 750px) {
+            .login-box {
+                padding: 2.5em 1em;
+                margin: auto;
+
+                background: #FFF;
+                border-radius: 10px;
+            }
+        }
+
+        .form-reset-password {
+            margin: auto;
+            padding: 15px 0;
+            width: 100%;
+            max-width: 330px;
+        }
+    </style>
+@endsection

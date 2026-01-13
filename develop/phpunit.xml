@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<phpunit xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:noNamespaceSchemaLocation="./vendor/phpunit/phpunit/phpunit.xsd"
+         bootstrap="vendor/autoload.php"
+         colors="true"
+         processIsolation="true">
+    <testsuites>
+        <!-- Migration用テスト -->
+        <testsuite name="Migrations">
+            <directory suffix="Test.php">./tests/Database/Migrations</directory>
+        </testsuite>
+        <!-- Config用テスト -->
+        <testsuite name="Config">
+            <directory suffix="Test.php">./tests/Config</directory>
+        </testsuite>
+        <!-- モデルクラス用テスト -->
+        <testsuite name="Models">
+            <directory suffix="Test.php">./tests/Models</directory>
+        </testsuite>
+        <!-- ルーティング用テスト -->
+        <testsuite name="Routes">
+            <directory suffix="Test.php">./tests/Routes</directory>
+        </testsuite>
+        <!-- サービス用テスト -->
+        <testsuite name="Services">
+            <directory suffix="Test.php">./tests/Services</directory>
+        </testsuite>
+        <!-- Enumクラス用テスト -->
+        <testsuite name="Enums">
+            <directory suffix="Test.php">./tests/Enums</directory>
+        </testsuite>
+        <!-- Helperクラス用テスト -->
+        <testsuite name="Helpers">
+            <directory suffix="Test.php">./tests/Helpers</directory>
+        </testsuite>
+        <!-- Importクラス用テスト -->
+        <testsuite name="Imports">
+            <directory suffix="Test.php">./tests/Imports</directory>
+        </testsuite>
+        <!-- Controllerクラス用テスト -->
+        <testsuite name="Controllers">
+            <directory suffix="Test.php">./tests/Http/Controllers</directory>
+        </testsuite>
+        <!-- Middlewareクラス用テスト -->
+        <testsuite name="Middleware">
+            <directory suffix="Test.php">./tests/Http/Middleware</directory>
+        </testsuite>
+    </testsuites>
+    <filter>
+        <whitelist processUncoveredFilesFromWhitelist="true">
+            <directory suffix=".php">./app</directory>
+        </whitelist>
+    </filter>
+    <php>
+        <!-- force：環境変数上書き -->
+        <env name="APP_ENV" value="testing" force="true"/>
+        <env name="BCRYPT_ROUNDS" value="4"/>
+        <env name="CACHE_DRIVER" value="array"/>
+        <env name="MAIL_DRIVER" value="array"/>
+        <env name="QUEUE_CONNECTION" value="sync"/>
+        <env name="SESSION_DRIVER" value="array"/>
+        <env name="DB_CONNECTION" value="mysql"/>
+        <env name="DB_DATABASE" value="test_develop"/>
+    </php>
+</phpunit>

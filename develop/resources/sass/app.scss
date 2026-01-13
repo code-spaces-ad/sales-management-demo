@@ -1,0 +1,29 @@
+/**
+ * @copyright © 2025 CodeSpaces
+ */
+
+// Fonts
+@import url('https://fonts.googleapis.com/css?family=Nunito');
+
+// Variables
+@import 'variables';
+
+// Bootstrap
+@import '~bootstrap/scss/bootstrap';
+
+// jquery -ui
+@import '~jquery-ui/themes/base/all.css';
+// select2
+@import "select2.css";
+
+// FontAwesome
+@import '~@fortawesome/fontawesome-free/scss/fontawesome';
+@import '~@fortawesome/fontawesome-free/scss/regular';
+@import '~@fortawesome/fontawesome-free/scss/solid';
+@import '~@fortawesome/fontawesome-free/scss/brands';
+
+// iCheck
+@import '~icheck-bootstrap/icheck-bootstrap.css';
+
+// Bootstrap4 Toggle
+@import '~bootstrap4-toggle/css/bootstrap4-toggle.min.css';
