@@ -28,9 +28,9 @@ class MasterBranchesTableSeeder extends Seeder
         }
 
         // production時は実行しない
-        if (app()->isProduction()) {
-            return;
-        }
+        //if (app()->isProduction()) {
+        //    return;
+        //}
 
         // データ生成
         factory(MasterBranch::class, config('seeder.faker.branch.generate_count'))->create();

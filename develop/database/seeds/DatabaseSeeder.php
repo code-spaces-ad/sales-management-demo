@@ -4,8 +4,6 @@
  * @copyright © 2025 CodeSpaces
  */
 
-use Database\Seeders\CsvSeeder;
-use Database\Seeders\TestDataSeeder;
 use Illuminate\Database\Seeder;
 
 /**

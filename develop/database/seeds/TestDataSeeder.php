@@ -3,7 +3,6 @@
 /**
  * @copyright © 2025 CodeSpaces
  */
-namespace Database\Seeders;
 
 use App\Models\Inventory\InventoryData;
 use App\Models\Inventory\InventoryDataClosing;
@@ -36,9 +35,9 @@ class TestDataSeeder extends Seeder
     public function run(): void
     {
         // production時は実行しない
-        if (app()->isProduction()) {
-            return;
-        }
+        //if (app()->isProduction()) {
+        //    return;
+        //}
 
         DB::statement('SET foreign_key_checks = 0');
 

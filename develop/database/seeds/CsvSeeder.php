@@ -1,7 +1,5 @@
 <?php
 
-namespace Database\Seeders;
-
 use App\Models\Master\MasterAccountingCode;
 use App\Models\Master\MasterCategory;
 use App\Models\Master\MasterClassification2;

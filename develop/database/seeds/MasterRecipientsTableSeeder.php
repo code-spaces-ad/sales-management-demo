@@ -28,9 +28,9 @@ class MasterRecipientsTableSeeder extends Seeder
         }
 
         // production時は実行しない
-        if (app()->isProduction()) {
-            return;
-        }
+        //if (app()->isProduction()) {
+        //    return;
+        //}
 
         // データ生成
         factory(MasterRecipient::class, config('seeder.faker.recipient.generate_count'))->create();
