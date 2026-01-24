@@ -15,6 +15,7 @@ Laravel開発(Docker環境構築)に関する情報を以下に記載する。
 ## ■初期構築
 
 * `cd docker`
+* `cp .env.example .env`
 * `docker compose up -d`
 * Windowsのみ：`exec winpty bash`
 * `docker compose exec php bash`
