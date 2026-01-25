@@ -93,7 +93,7 @@
             <div class="buttons-area text-center mt-2">
                 <button type="button" id="bulk-closing" class="btn btn-primary pl-4 pr-4 pt-2 pb-2 mr-2"
                         data-toggle="modal" data-target="#confirm-store"
-                        style="font-size: 1.5em;">
+                        style="font-size: 1.5em;" disabled>
                     <i class="fas fa-calculator"></i>
                     <div class="spinner-border text-light" role="status" style="display: none;"></div>
                     締処理の実行
@@ -105,6 +105,7 @@
                     <div class="spinner-border text-light" role="status" style="display: none;"></div>
                     締処理の解除
                 </button>
+                <b class="invalid-feedback">※「締処理の実行」メンテナンス中※</b>
             </div>
         </div>
     </div>
@@ -120,13 +121,13 @@
     </form>
 
     {{-- Confirm Store Modal --}}
-    @component('components.confirm_modal')
+    {{-- @component('components.confirm_modal')
         @slot('modal_id', 'confirm-store')
         @slot('confirm_message',
             config('consts.message.charge_closing.confirm.store') . "\r\n※締未処理の請求先が対象となります。"
         )
         @slot('onclick_btn_ok', "chargeClosingStore('" . route('api.invoice.closing_job') . "');return false;")
-    @endcomponent
+    @endcomponent --}}
 
     {{-- Confirm Cancel Modal --}}
     @component('components.confirm_modal')

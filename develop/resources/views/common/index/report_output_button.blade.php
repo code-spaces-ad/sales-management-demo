@@ -11,14 +11,15 @@
             </button>
 
             {{-- Excelダウンロードボタン --}}
-            <a class="btn btn-success mr-2" onclick="downloadReportExcel('{{ $view_settings['download_excel_url'] }}');">
+            <button class="btn btn-success mr-2" onclick="downloadReportExcel('{{ $view_settings['download_excel_url'] }}');">
                 <i class="fas fa-file-excel"></i> Excel
-            </a>
+            </button>
 
             {{-- PDFダウンロードボタン --}}
-            <a class="btn btn-danger" onclick="downloadReportPdf('{{ $view_settings['download_pdf_url'] }}');">
+            <button class="btn btn-danger" disabled>
                 <i class="fas fa-file-pdf"></i> PDF
-            </a>
+            </button>
+                <b class="col-form-label" style="color: #e3342f;">※「PDF」メンテナンス中※</b>
         </div>
     </div>
 @show
