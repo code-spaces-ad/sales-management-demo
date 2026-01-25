@@ -67,12 +67,13 @@
                     <button type="button" id="printInvoicePdf"
                             class="btn btn-danger mr-1"
                             data-toggle="modal" data-target="#confirm-print-pdf"
+                            disabled
                             @if ($search_result['charge_data']->isEmpty()) disabled @endif>
                         <i class="fas fa-file-pdf"></i>
                         PDF
                     </button>
+                    <b class="col-form-label" style="color: #e3342f;">※「PDF」メンテナンス中※</b>
                 </div>
-
             </div>
         </div>
 
@@ -133,8 +134,7 @@
                                 data-title="消費税額">{{ number_format($detail['sales_tax_total']) }}</td>
                             <td class="text-center" data-title="帳票">
                                 <button type="button" name="single-print" class="btn btn-primary btn-xs"
-                                        onclick="printInvoicePdfSingle('{{$detail->id}}',
-                                            '{{$detail->customer_id}}','{{$detail->customer_name}}');">
+                                        disabled>
                                     請求書
                                 </button>
                             </td>
@@ -166,11 +166,11 @@
         @slot('confirm_message', config('consts.message.common.confirm.excel'))
         @slot('onclick_btn_ok', "printInvoice();")
     @endcomponent
-    @component('components.confirm_modal')
+    {{-- @component('components.confirm_modal')
         @slot('modal_id', 'confirm-print-pdf')
         @slot('confirm_message', config('consts.message.common.confirm.pdf'))
         @slot('onclick_btn_ok', "printInvoicePdf();")
-    @endcomponent
+    @endcomponent --}}
 
     {{-- JS読み込み --}}
     <script src="{{ mix('js/app/invoice/index.js') }}"></script>
