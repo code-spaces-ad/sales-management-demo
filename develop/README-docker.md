@@ -23,6 +23,7 @@ Laravel開発(Docker環境構築)に関する情報を以下に記載する。
 * `find /var/www/public -type d -print0 | xargs -0 chmod 707`
 * `cp .env.docker .env`
 * `composer install`
+* `php artisan key:generate`
 * `php artisan migrate:refresh --seed`
 * `npm install`
 * `npm run dev`
@@ -68,9 +69,9 @@ Laravel開発(Docker環境構築)に関する情報を以下に記載する。
 BROADCAST_DRIVER=pusher
 QUEUE_CONNECTION=database
 
-PUSHER_APP_ID=1951974
-PUSHER_APP_KEY=f605e24d3b51f9ce5f21
-PUSHER_APP_SECRET=330f663f9507a653545c
+PUSHER_APP_ID=2102401
+PUSHER_APP_KEY=5c23788e176e62e7974c
+PUSHER_APP_SECRET=1bcfa2af3f306be6adb9
 PUSHER_APP_CLUSTER=ap3
 ```
 
